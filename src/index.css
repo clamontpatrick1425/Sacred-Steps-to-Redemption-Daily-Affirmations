@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-script: 'Caveat', cursive;
+
+    --color-dawn-gold: #D4AF37;
+    --color-sacred-blue: #1C2A39;
+    --color-muted-sage: #7A8B7B;
+    --color-warm-sand: #F9F6F0;
+    --color-off-black: #2B2B2B;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #F9F6F0;
+    color: #2B2B2B;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Typography Utility Classes */
+.font-serif-sacred {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-script-sacred {
+  font-family: 'Caveat', cursive;
+}
+
+.font-sans-sacred {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+/* Print optimizations for 5-page Lead Magnet */
+@media print {
+  body {
+    background-color: #F9F6F0 !important;
+    color: #2B2B2B !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .page-break {
+    page-break-after: always;
+    break-after: page;
+  }
+}
+
+/* Custom quiet scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(122, 139, 123, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.4);
+}

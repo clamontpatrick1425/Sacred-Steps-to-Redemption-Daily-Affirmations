@@ -1,0 +1,6 @@
+{
+  "name": "Sacred Steps to Redemption",
+  "description": "A Christ-centered recovery guide and 365-day affirmation journey anchored in the Sacred S.T.E.P. Method™. Walk out of bondage into sustained freedom with daily scripture, mindfulness, and sacred audio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

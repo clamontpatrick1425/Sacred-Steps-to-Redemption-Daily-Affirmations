@@ -1,0 +1,120 @@
+{
+  "book": {
+    "title": "Sacred Steps to Redemption: 365 Biblical Affirmations",
+    "subtitle": "A 12-Month Guided Journal to Renew Your Mind, Strengthen Your Faith, and Walk in God's Freedom",
+    "companion": "Sacred Steps to Redemption: A 52-Week Recovery Journal",
+    "coreTaglines": [
+      "A Path to Recovery, A Life in Grace.",
+      "Sustained Walking, Daily Freedom."
+    ],
+    "stepMethod": {
+      "name": "The Sacred S.T.E.P. Method™",
+      "s": "Scripture — One verse that anchors the day in God's Word, not in a feeling. Feelings lie sometimes. Scripture doesn't.",
+      "t": "Truth — A short sentence naming the specific lie, fear, or shame that verse is dismantling. You cannot replace a lie you haven't named.",
+      "e": "Embrace — A personal, first-person affirmation — an 'I am' statement — that puts the Scripture's truth into your own mouth. This is not self-help positivity. It's agreeing with what God has already said about you.",
+      "p": "Practice — One small, concrete Sacred Step. Renewal doesn't stay in your head. It has to touch your hands and your day."
+    }
+  },
+  "month": {
+    "monthNumber": 1,
+    "monthName": "January",
+    "theme": "Identity: Who God Says I Am",
+    "themeScripture": {
+      "reference": "Genesis 1:27",
+      "text": "“So God created man in his own image, in the image of God created he him.”"
+    },
+    "themeIntroduction": "Before you were an addict, a failure, a disappointment, or a diagnosis, you were an image-bearer. Every label the last twenty years handed you was layered on top of that first, truer fact — and this month is about digging back down to it. Identity isn't something you build from scratch. It's something you recover."
+  },
+  "week": {
+    "weekNumber": 1,
+    "title": "I Am Not My Past",
+    "introduction": "The first lie addiction tells you is also the last one it lets go of: you are what you did. This week we start pulling that lie up by the root. Your past is real. It is not your name.",
+    "days": [
+      {
+        "dayNumber": 1,
+        "weekNumber": 1,
+        "dayOfWeek": 1,
+        "scripture": {
+          "reference": "2 Corinthians 5:17",
+          "text": "“Therefore if any man be in Christ, he is a new creature: old things are passed away.”"
+        },
+        "truth": "My worst year does not get to write my name.",
+        "embrace": "I am a new creation in Christ. The old things — the addiction, the shame, the failures — have passed away, and I do not have to carry them into today.",
+        "sacredStep": "Write down one label you've been calling yourself. Cross it out. Write “new creation” beside it."
+      },
+      {
+        "dayNumber": 2,
+        "weekNumber": 1,
+        "dayOfWeek": 2,
+        "scripture": {
+          "reference": "Isaiah 43:18-19",
+          "text": "“Remember ye not the former things… Behold, I will do a new thing.”"
+        },
+        "truth": "Rehearsing my past keeps me from seeing what God is doing now.",
+        "embrace": "I am someone God is actively remaking. I release the habit of replaying old failures, because He is doing something new in me right now.",
+        "sacredStep": "Notice one moment today you start replaying an old failure, and say out loud, “That's not where I live anymore.”"
+      },
+      {
+        "dayNumber": 3,
+        "weekNumber": 1,
+        "dayOfWeek": 3,
+        "scripture": {
+          "reference": "Ephesians 2:10",
+          "text": "“For we are his workmanship, created in Christ Jesus unto good works.”"
+        },
+        "truth": "I am not damaged goods; I am unfinished work.",
+        "embrace": "I am God's workmanship, not His mistake. Every hard year of my life is material He is still shaping into something good.",
+        "sacredStep": "Name one skill, scar, or lesson from your past that could actually help someone else. Write it down."
+      },
+      {
+        "dayNumber": 4,
+        "weekNumber": 1,
+        "dayOfWeek": 4,
+        "scripture": {
+          "reference": "Romans 8:1",
+          "text": "“There is therefore now no condemnation to them which are in Christ Jesus.”"
+        },
+        "truth": "Guilt tells the truth about my sin; condemnation lies about my worth.",
+        "embrace": "I am not condemned. I can feel the weight of what I've done without letting it define who I am becoming.",
+        "sacredStep": "Say out loud, “No condemnation,” the next time shame shows up uninvited today."
+      },
+      {
+        "dayNumber": 5,
+        "weekNumber": 1,
+        "dayOfWeek": 5,
+        "scripture": {
+          "reference": "Philippians 3:13-14",
+          "text": "“Forgetting those things which are behind… I press toward the mark.”"
+        },
+        "truth": "Healing requires movement, not just memory.",
+        "embrace": "I am someone who is pressing forward. I honor my past by learning from it, not by living inside it.",
+        "sacredStep": "Choose one forward-looking action today — a call, a meeting, an application — instead of one more hour of looking back."
+      },
+      {
+        "dayNumber": 6,
+        "weekNumber": 1,
+        "dayOfWeek": 6,
+        "scripture": {
+          "reference": "1 Samuel 16:7",
+          "text": "“The Lord looketh on the heart.”"
+        },
+        "truth": "Other people may only see my record; God sees my heart.",
+        "embrace": "I am seen by God beyond my worst moments. What He sees when He looks at me is not my file — it's my heart.",
+        "sacredStep": "Spend two quiet minutes today simply saying, “You see my heart, God, not just my record.”"
+      },
+      {
+        "dayNumber": 7,
+        "weekNumber": 1,
+        "dayOfWeek": 7,
+        "scripture": {
+          "reference": "Revelation 21:5",
+          "text": "“Behold, I make all things new.”"
+        },
+        "truth": "God's specialty is not managing my past — it's making things new.",
+        "embrace": "I am part of what God is making new. My story is not over, and neither is His work in me.",
+        "sacredStep": "Write one sentence describing the “new thing” you hope God is doing in you this year."
+      }
+    ],
+    "weeklyReflection": "This week wasn't about pretending your past didn't happen. It was about refusing to let it hold the pen. You are not your worst year, your longest relapse, or the people you hurt along the way — you are what God is making, one honest day at a time. Next week, we go a layer deeper: not just what you're not, but who you actually are — beloved."
+  }
+}

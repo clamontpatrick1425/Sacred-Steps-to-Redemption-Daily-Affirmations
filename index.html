@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Guard window.fetch against accessor-only defineProperty calls that break re-assignment
+      (function() {
+        var originalDefineProperty = Object.defineProperty;
+        var currentFetch = window.fetch;
+        Object.defineProperty = function(target, prop, descriptor) {
+          if ((target === window || target === globalThis || (typeof Window !== 'undefined' && target === Window.prototype)) && prop === 'fetch') {
+            try {
+              var originalGetter = descriptor && descriptor.get;
+              var originalSetter = descriptor && descriptor.set;
+              var safeDescriptor = {
+                configurable: true,
+                enumerable: descriptor ? descriptor.enumerable !== false : true,
+                get: function() {
+                  return originalGetter ? originalGetter.call(this) : currentFetch;
+                },
+                set: function(val) {
+                  currentFetch = val;
+                  if (originalSetter) {
+                    originalSetter.call(this, val);
+                  } else {
+                    originalGetter = function() { return val; };
+                  }
+                }
+              };
+              return originalDefineProperty.call(Object, target, prop, safeDescriptor);
+            } catch (err) {
+              return originalDefineProperty.apply(Object, arguments);
+            }
+          }
+          return originalDefineProperty.apply(Object, arguments);
+        };
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Sacred Steps to Redemption</title>
+    <meta name="description" content="A Christ-centered recovery guide and 365-day affirmation journey anchored in the Sacred S.T.E.P. Method™. Walk out of bondage into sustained freedom with daily scripture, mindfulness, and sacred audio." />
+    <meta property="og:title" content="Sacred Steps to Redemption" />
+    <meta property="og:description" content="A Christ-centered recovery guide and 365-day affirmation journey anchored in the Sacred S.T.E.P. Method™. Walk out of bondage into sustained freedom with daily scripture, mindfulness, and sacred audio." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#F9F6F0] text-[#2B2B2B] antialiased selection:bg-[#D4AF37]/20 selection:text-[#1C2A39]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
