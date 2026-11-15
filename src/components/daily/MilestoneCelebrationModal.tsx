@@ -27,7 +27,7 @@ export const MilestoneCelebrationModal: React.FC<MilestoneCelebrationModalProps>
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C2A39]/85 backdrop-blur-sm overflow-y-auto">
+      <div key="milestone-overlay" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C2A39]/85 backdrop-blur-sm overflow-y-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

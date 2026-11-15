@@ -28,7 +28,7 @@ export const DailyReminderModal: React.FC<DailyReminderModalProps> = ({ isOpen, 
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C2A39]/80 backdrop-blur-sm">
+      <div key="daily-reminder-overlay" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C2A39]/80 backdrop-blur-sm">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

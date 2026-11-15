@@ -65,6 +65,7 @@ export const OctoberLeadMagnetLandingPage: React.FC<OctoberLandingPageProps> = (
     description: string;
     features: string[];
   } | null>(null);
+  const [orderConfirmed, setOrderConfirmed] = useState(false);
 
   // October Month Data from authoritative curriculum
   const octoberData = MONTHLY_LEAD_MAGNET_DATA[10];
@@ -978,7 +979,7 @@ export const OctoberLeadMagnetLandingPage: React.FC<OctoberLandingPageProps> = (
       {/* Product Details Modal (Mock Checkout / Preview) */}
       <AnimatePresence>
         {selectedProduct && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+          <div key="oct-product-overlay" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -1015,23 +1016,40 @@ export const OctoberLeadMagnetLandingPage: React.FC<OctoberLandingPageProps> = (
                 </ul>
               </div>
 
-              <div className="flex items-center gap-2 pt-2">
-                <button
-                  onClick={() => {
-                    alert(`Thank you for your interest! In the production app, this connects to Kya Daisy Publishing checkout for ${selectedProduct.title}.`);
-                    setSelectedProduct(null);
-                  }}
-                  className="flex-1 py-2.5 px-4 bg-[#1C2A39] hover:bg-[#D4AF37] hover:text-[#1C2A39] text-[#D4AF37] font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center"
-                >
-                  Continue to Order ({selectedProduct.price})
-                </button>
-                <button
-                  onClick={() => setSelectedProduct(null)}
-                  className="py-2.5 px-4 bg-white/60 hover:bg-white text-[#2B2B2B] text-xs font-semibold rounded-lg border border-[#7A8B7B]/40"
-                >
-                  Close
-                </button>
-              </div>
+              {orderConfirmed ? (
+                <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-900 text-center space-y-2">
+                  <p className="font-semibold">
+                    Thank you! Your order preview for {selectedProduct.title} is confirmed with Kya Daisy Publishing.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setOrderConfirmed(false);
+                      setSelectedProduct(null);
+                    }}
+                    className="py-2 px-5 bg-[#1C2A39] text-[#D4AF37] text-xs font-bold rounded-lg cursor-pointer"
+                  >
+                    Done
+                  </button>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2 pt-2">
+                  <button
+                    onClick={() => setOrderConfirmed(true)}
+                    className="flex-1 py-2.5 px-4 bg-[#1C2A39] hover:bg-[#D4AF37] hover:text-[#1C2A39] text-[#D4AF37] font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer"
+                  >
+                    Continue to Order ({selectedProduct.price})
+                  </button>
+                  <button
+                    onClick={() => {
+                      setOrderConfirmed(false);
+                      setSelectedProduct(null);
+                    }}
+                    className="py-2.5 px-4 bg-white/60 hover:bg-white text-[#2B2B2B] text-xs font-semibold rounded-lg border border-[#7A8B7B]/40 cursor-pointer"
+                  >
+                    Close
+                  </button>
+                </div>
+              )}
             </motion.div>
           </div>
         )}

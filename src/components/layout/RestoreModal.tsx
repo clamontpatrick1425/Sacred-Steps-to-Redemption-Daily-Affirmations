@@ -34,6 +34,7 @@ export const RestoreModal: React.FC<RestoreModalProps> = ({
   const [isProcessing, setIsProcessing] = useState(false);
   const [jsonPaste, setJsonPaste] = useState('');
   const [showJsonInput, setShowJsonInput] = useState(false);
+  const [confirmReset, setConfirmReset] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   if (!isOpen) return null;
@@ -136,21 +137,20 @@ export const RestoreModal: React.FC<RestoreModalProps> = ({
 
   // Fresh Graceful Reset
   const handleGracefulReset = () => {
-    if (window.confirm('Would you like to reset your local journal and step history to a fresh start?')) {
-      storageService.restoreDefaults();
-      leadMagnetService.resetLeadState();
-      sacredAudio.playSacredChime();
-      setStatusMessage({
-        type: 'success',
-        text: 'A clean slate is granted. "Old things are passed away; all things become new."'
-      });
-      if (onDataRestored) onDataRestored();
-    }
+    storageService.restoreDefaults();
+    leadMagnetService.resetLeadState();
+    sacredAudio.playSacredChime();
+    setConfirmReset(false);
+    setStatusMessage({
+      type: 'success',
+      text: 'A clean slate is granted. "Old things are passed away; all things become new."'
+    });
+    if (onDataRestored) onDataRestored();
   };
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C2A39]/80 backdrop-blur-sm overflow-y-auto">
+      <div key="restore-modal-overlay" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C2A39]/80 backdrop-blur-sm overflow-y-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -363,13 +363,37 @@ export const RestoreModal: React.FC<RestoreModalProps> = ({
                 </p>
               </div>
 
-              <button
-                type="button"
-                onClick={handleGracefulReset}
-                className="w-full py-3.5 px-6 rounded-xl bg-white border border-rose-300 hover:bg-rose-50 text-rose-800 text-xs font-bold transition-all shadow-xs cursor-pointer"
-              >
-                Reset Progress & Begin Anew
-              </button>
+              {!confirmReset ? (
+                <button
+                  type="button"
+                  onClick={() => setConfirmReset(true)}
+                  className="w-full py-3.5 px-6 rounded-xl bg-white border border-rose-300 hover:bg-rose-50 text-rose-800 text-xs font-bold transition-all shadow-xs cursor-pointer"
+                >
+                  Reset Progress & Begin Anew
+                </button>
+              ) : (
+                <div className="p-4 bg-rose-50 border border-rose-300 rounded-xl space-y-3">
+                  <p className="text-xs font-semibold text-rose-900">
+                    Would you like to reset your local journal and step history to a fresh start?
+                  </p>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={handleGracefulReset}
+                      className="flex-1 py-2.5 px-4 rounded-lg bg-rose-700 hover:bg-rose-800 text-white text-xs font-bold transition-colors cursor-pointer"
+                    >
+                      Yes, Begin Anew
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setConfirmReset(false)}
+                      className="py-2.5 px-4 rounded-lg bg-white border border-rose-200 text-rose-900 text-xs font-semibold hover:bg-rose-100/50 transition-colors cursor-pointer"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           )}
 

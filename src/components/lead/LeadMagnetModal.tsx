@@ -84,7 +84,7 @@ export const LeadMagnetModal: React.FC<LeadMagnetModalProps> = ({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C2A39]/85 backdrop-blur-sm overflow-y-auto">
+      <div key="lead-magnet-overlay" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C2A39]/85 backdrop-blur-sm overflow-y-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

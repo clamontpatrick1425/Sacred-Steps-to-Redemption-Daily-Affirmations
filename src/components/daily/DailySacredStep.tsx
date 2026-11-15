@@ -287,6 +287,7 @@ export const DailySacredStep: React.FC<DailySacredStepProps> = ({
         <AnimatePresence>
           {graceActive && (
             <motion.div
+              key="grace-mode-banner"
               initial={{ opacity: 0, height: 0, marginBottom: 0 }}
               animate={{ opacity: 1, height: 'auto', marginBottom: 28 }}
               exit={{ opacity: 0, height: 0, marginBottom: 0 }}
@@ -399,6 +400,7 @@ export const DailySacredStep: React.FC<DailySacredStepProps> = ({
             <AnimatePresence>
               {isJournalOpen && (
                 <motion.div
+                  key="micro-journal-panel"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
@@ -453,6 +455,7 @@ export const DailySacredStep: React.FC<DailySacredStepProps> = ({
           <AnimatePresence>
             {isCompleted && (
               <motion.div
+                key="step-completed-banner"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
